@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AegisMesh | Zero-Trust Gateway & Service Mesh</title>
+    <meta name="description" content="AegisMesh is a Java 25 Zero-Trust gateway combining service-mesh, API gateway, and native proxying. Built for banking compliance.">
+    <style>
+        :root {
+            --primary-blue: #0a2540;
+            --accent-blue: #00d4ff;
+            --text-main: #333333;
+            --bg-light: #f6f9fc;
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0 0 15px 0;
+            font-size: 2.5rem;
+            color: white;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid var(--accent-blue);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-blue);
+        }
+        .contact-section {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #eaeaea;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #000000;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--bg-light);
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AegisMesh</h1>
+        <p class="subtitle">The definitive Java 25 Zero-Trust Gateway. Combining Service-Mesh and API-Gateway capabilities into one lightweight, compliance-ready architecture.</p>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <h3>Core Architecture</h3>
+                <p>Built natively on Java 25 using Virtual Threads and Infinispan. AegisMesh operates with zero external dependencies. It ensures maximum throughput with a minimal footprint.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Unified Routing</h3>
+                <p>Manage everything through simplified YAML configurations and Omni Routes. Seamlessly tunnel legacy HTTP applications alongside modern microservices without architectural friction.</p>
+            </div>
+
+            <div class="card">
+                <h3>Native Proxying</h3>
+                <p>Go beyond standard HTTP. AegisMesh provides out-of-the-box native proxying for S3, MQ, and Kafka. Streamline your infrastructure by removing dedicated proxy layers.</p>
+            </div>
+
+            <div class="card">
+                <h3>Banking-Grade Security</h3>
+                <p>Designed strictly for Zero-Trust environments. Features include on-the-fly encryption and deep payload scanning and transformation natively at the edge.</p>
+            </div>
+
+            <div class="card">
+                <h3>AI-Ready Edge</h3>
+                <p>Built-in AI capabilities accelerate modern workloads. Utilize native VectorDB semantic caching directly within the gateway to reduce backend LLM latency and costs.</p>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Ready to secure your infrastructure?</h2>
+            <p>We are currently setting up our public documentation and access portals.</p>
+            <a href="mailto:info@aegismesh.ch" class="btn">Contact Engineering</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 AegisMesh GmbH. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
