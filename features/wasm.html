@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAssembly (WASM) | AegisMesh</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+    <a href="/" class="nav-logo">AegisMesh</a>
+    <div class="nav-links">
+        <a href="mailto:info@aegismesh.ch">Contact Engineering</a>
+    </div>
+</nav>
+
+<div class="article-container">
+    <a href="/" class="breadcrumb">&larr; Back to Overview</a>
+
+    <article>
+        <h1>WebAssembly (WASM) Extensibility</h1>
+
+        <p>Standard API Gateways limit you to their built-in plugins or force you to write slow, out-of-process Lua/Python scripts. AegisMesh embraces the future of edge compute by allowing tenants to execute highly optimized WebAssembly (WASM) binaries directly in the request path.</p>
+
+        <h2>Zero-JNI Execution via Chicory</h2>
+        <p>Other gateways (like Envoy or Kong) use heavy C++ V8 engines to run Wasm, relying on dangerous Java Native Interface (JNI) bridges. A segmentation fault in a tenant's C++ plugin can crash the entire gateway. AegisMesh utilizes <strong>Chicory 1.x</strong>, a zero-dependency, pure-Java WebAssembly runtime. Wasm plugins run strictly within the JVM sandbox, guaranteeing 100% memory safety.</p>
+
+        <h2>Zero-GC Primitive Performance</h2>
+        <p>To ensure microsecond latency, AegisMesh bypasses traditional object-wrapper overhead. Utilizing modern Chicory APIs, we pass primitive 64-bit numbers (<code>LongArrays</code>) directly into the WebAssembly linear memory sandbox, executing complex mathematics and payload manipulations with absolute zero Garbage Collection (GC) overhead.</p>
+
+        <h2>Bring Your Own Middleware (BYOM)</h2>
+        <p>Your platform engineering teams are not restricted to writing Java plugins. Developers can write their custom L7 middleware in Rust, Go, Zig, or TypeScript, compile it to a standard <code>.wasm</code> binary, and push it to your GitOps repository. AegisMesh dynamically mounts the binary and executes it on the fly.</p>
+    </article>
+</div>
+
+<footer>
+    <p>&copy; 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

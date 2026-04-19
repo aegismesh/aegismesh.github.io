@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking-Grade Security | AegisMesh</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+    <a href="/" class="nav-logo">AegisMesh</a>
+    <div class="nav-links">
+        <a href="mailto:info@aegismesh.ch">Contact Engineering</a>
+    </div>
+</nav>
+
+<div class="article-container">
+    <a href="/" class="breadcrumb">&larr; Back to Overview</a>
+
+    <article>
+        <h1>Banking-Grade Security</h1>
+
+        <p>Built in Zug, Switzerland, AegisMesh is engineered to meet the strictest FINMA and GDPR data sovereignty requirements. Security is not a plugin, it is the core routing foundation.</p>
+
+        <h2>AST-Based Data Loss Prevention (DLP)</h2>
+        <p>Traditional API gateways apply brute-force Regex over raw HTTP byte arrays. This causes Regex Denial of Service (ReDoS) CPU spikes and frequently corrupts embedded base64 binaries. AegisMesh parses JSON into a strict <strong>Abstract Syntax Tree (AST)</strong> using Jackson, traversing only textual values to redact sensitive PII (like Swiss IBANs or Credit Cards) without altering the structural integrity or binary payloads.</p>
+
+        <h2>Hierarchical GitOps RBAC</h2>
+        <p>Authorization is defined entirely via declarative YAML. AegisMesh features a two-tier policy engine: <strong>Cluster Master Policies</strong> enforce non-negotiable global constraints (like DDoS limits and inbound DLP), while <strong>Tenant Namespace Policies</strong> allow product teams to define granular endpoint roles. Any deviation from the GitOps source of truth is instantly blocked with a 403 Forbidden.</p>
+
+        <h2>Ambient Identity & Zero-Trust</h2>
+        <p>Never trust the network. AegisMesh resolves identities from multiple vectors simultaneously: Kubernetes Service Accounts (Ambient Mesh), mTLS client certificates, and cryptographically verified API Keys (via SHA-256 hash lookup). Spoofed internal headers are violently stripped. Every L7 routing decision is seamlessly upgraded to a short-lived, locally signed RSA-4096 JWT for secure downstream context.</p>
+    </article>
+</div>
+
+<footer>
+    <p>&copy; 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

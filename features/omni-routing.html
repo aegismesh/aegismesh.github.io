@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omni-Protocol Routing | AegisMesh</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+    <a href="/" class="nav-logo">AegisMesh</a>
+    <div class="nav-links">
+        <a href="mailto:info@aegismesh.ch">Contact Engineering</a>
+    </div>
+</nav>
+
+<div class="article-container">
+    <a href="/" class="breadcrumb">&larr; Back to Overview</a>
+
+    <article>
+        <h1>Omni-Protocol Routing</h1>
+
+        <p>Microservice sprawl forces teams to write and maintain hundreds of "translation" services just to move an HTTP request onto a message bus. AegisMesh eliminates this middleware entirely by shifting protocol translation to the L7 edge.</p>
+
+        <h2>Async-to-Sync Bridging</h2>
+        <p>Migrating legacy mainframes to event-driven architectures is notoriously difficult because legacy clients expect synchronous HTTP <code>200 OK</code> replies. AegisMesh solves this via the <code>SyncReplyCoordinator</code>. When a legacy client sends an HTTP request, AegisMesh publishes it to Kafka, parks the Virtual Thread with near-zero memory overhead, listens for the asynchronous broker reply, and seamlessly resumes the HTTP response back to the client.</p>
+
+        <h2>On-the-Fly Schema Translation</h2>
+        <p>Stop writing boilerplate serialization code. AegisMesh integrates directly with Confluent and Apicurio Schema Registries. It intercepts JSON HTTP bodies, validates them against your GitOps definitions, and dynamically translates them into highly compressed <strong>Avro</strong> or <strong>Protobuf</strong> binaries before writing to the broker. An LRU Cache dynamically appends the required schema Magic Bytes, preventing downstream consumer crashes.</p>
+
+        <h2>Persistent Dead Letter Queues (DLQ)</h2>
+        <p>Distributed systems fail. When upstream brokers like Redpanda or RabbitMQ experience an outage, AegisMesh degrades gracefully. Instead of throwing a 503 Gateway Timeout and losing the transaction, failed payloads are instantly spooled to tenant-isolated persistent storage volumes on disk. The client receives a <code>202 Accepted</code>, ensuring absolutely zero data loss during major outages.</p>
+    </article>
+</div>
+
+<footer>
+    <p>&copy; 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

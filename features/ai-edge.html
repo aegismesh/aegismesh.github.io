@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Ready Edge | AegisMesh</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+    <a href="/" class="nav-logo">AegisMesh</a>
+    <div class="nav-links">
+        <a href="mailto:info@aegismesh.ch">Contact Engineering</a>
+    </div>
+</nav>
+
+<div class="article-container">
+    <a href="/" class="breadcrumb">&larr; Back to Overview</a>
+
+    <article>
+        <h1>AI-Ready Edge Proxy</h1>
+
+        <p>Integrating Large Language Models (LLMs) into enterprise infrastructure introduces extreme latency, massive API costs, and severe prompt injection risks. AegisMesh intercepts outbound AI traffic to sanitize, cache, and govern it natively at the edge.</p>
+
+        <h2>Local ONNX Semantic Caching</h2>
+        <p>Exact-string caching is useless for AI. "What is GitOps?" and "Can you explain GitOps?" mean the exact same thing but have different strings. AegisMesh uses <strong>LangChain4j 1.x</strong> to run a quantized ONNX embedding model (<code>all-minilm-l6-v2</code>) completely locally inside the JVM. It converts incoming prompts into dense vectors in microseconds, bypassing external embedding APIs entirely.</p>
+
+        <h2>VectorDB Tenant Isolation</h2>
+        <p>Semantic caches are dangerous in multi-tenant environments if not strictly segregated. Vectors are queried against an attached <strong>Milvus</strong> database. AegisMesh injects strict <code>tenantId</code> and Time-To-Live (TTL) metadata filters into the VectorDB queries, guaranteeing that semantic hits never leak data across organizational boundaries or serve outdated intelligence.</p>
+
+        <h2>Token Quotas (TPM SLA)</h2>
+        <p>Rate limiting AI by "requests per minute" is obsolete. AegisMesh intercepts the payload, runs it through a <code>CL100K_BASE</code> tokenizer, and counts the exact tokens. It enforces strict Tokens-Per-Minute (TPM) SLAs on a per-user and per-tenant basis via our embedded Infinispan cluster, dropping traffic with a <code>429</code> if a tenant exceeds their LLM budget.</p>
+    </article>
+</div>
+
+<footer>
+    <p>&copy; 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
