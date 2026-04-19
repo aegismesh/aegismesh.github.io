@@ -25,7 +25,7 @@
         <p>Modern service meshes often rely on bloated architectures requiring heavy sidecars (Envoy), centralized identity servers (Keycloak), and external state stores (Redis). AegisMesh strips away the bloat to give you raw performance and operational simplicity.</p>
 
         <h2>Java 25 & Virtual Threads</h2>
-        <p>Built from the ground up for Project Loom. AegisMesh utilizes <code>Virtual Threads</code> to handle tens of thousands of concurrent I/O requests. By offloading heavy CPU tasks—like WebAssembly execution and ONNX vector embeddings—to dedicated bulkheaded thread pools, the gateway guarantees microsecond routing latency without thread starvation.</p>
+        <p>Built from the ground up for Project Loom. AegisMesh utilizes <code>Virtual Threads</code> to handle tens of thousands of concurrent I/O requests. By offloading heavy CPU tasks like WebAssembly execution and ONNX vector embeddings to dedicated bulkheaded thread pools, the gateway guarantees microsecond routing latency without thread starvation.</p>
 
         <h2>Embedded TCP Infinispan</h2>
         <p>External dependencies like Redis create licensing headaches and network hops. AegisMesh uses an embedded <strong>Infinispan</strong> cluster configured with TCPPING. When deployed to Kubernetes, gateway nodes discover each other statelessly via standard K8s DNS, forming a highly optimized, distributed rate-limiting cache natively inside the JVM.</p>
