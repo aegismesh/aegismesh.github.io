@@ -3,40 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebAssembly (WASM) | AegisMesh</title>
+    <title>WebAssembly Extensibility | AegisMesh</title>
+    <meta name="description" content="Safely run custom logic at the edge. AegisMesh lets you deploy custom middleware in Rust, Go, or TypeScript with crash-proof execution and ultra-low latency.">
+    <link rel="canonical" href="https://aegismesh.ch/features/wasm.html">
+
+    <meta property="og:title" content="WebAssembly Extensibility | AegisMesh">
+    <meta property="og:description" content="Safely run custom logic at the edge. AegisMesh lets you deploy custom middleware in Rust, Go, or TypeScript with crash-proof execution and ultra-low latency.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aegismesh.ch/features/wasm.html">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "headline": "WebAssembly (WASM) Extensibility",
+            "publisher": {
+                "@type": "Organization",
+                "name": "CryptoBites GmbH"
+            }
+        }
+    </script>
+
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/x-icon" href="../scripts/favicon.ico">
 </head>
 <body>
 
-<nav>
+<nav aria-label="Main Navigation">
     <a href="/" class="nav-logo">AegisMesh</a>
     <div class="nav-links">
         <a href="mailto:info@aegismesh.ch">Contact Engineering</a>
     </div>
 </nav>
 
-<div class="article-container">
-    <a href="/" class="breadcrumb">&larr; Back to Overview</a>
+<main class="article-container">
+    <a href="/" class="breadcrumb" aria-label="Return to Overview">Back to Overview</a>
 
     <article>
-        <h1>WebAssembly (WASM) Extensibility</h1>
+        <header>
+            <h1>WebAssembly (WASM) Extensibility</h1>
+            <p class="lead">Traditional gateways restrict you to their limited built-in plugins or slow down your traffic with external scripts. AegisMesh lets your teams safely run custom, highly optimized code directly at the edge for maximum flexibility.</p>
+        </header>
 
-        <p>Standard API Gateways limit you to their built-in plugins or force you to write slow, out-of-process Lua/Python scripts. AegisMesh embraces the future of edge compute by allowing tenants to execute highly optimized WebAssembly (WASM) binaries directly in the request path.</p>
+        <section>
+            <h2>Crash-Proof Execution</h2>
+            <p>Poorly written custom plugins can easily crash traditional gateways and cause widespread outages. AegisMesh runs all custom code inside a strictly isolated sandbox. Even if a plugin fails the gateway remains completely stable and secure.</p>
+        </section>
 
-        <h2>Zero-JNI Execution via Chicory</h2>
-        <p>Other gateways (like Envoy or Kong) use heavy C++ V8 engines to run Wasm, relying on dangerous Java Native Interface (JNI) bridges. A segmentation fault in a tenant's C++ plugin can crash the entire gateway. AegisMesh utilizes <strong>Chicory 1.x</strong>, a zero-dependency, pure-Java WebAssembly runtime. Wasm plugins run strictly within the JVM sandbox, guaranteeing 100% memory safety.</p>
+        <section>
+            <h2>Ultra-Low Latency</h2>
+            <p>Custom logic should never slow down your API. AegisMesh optimizes data transfer between the gateway and your custom plugins to eliminate memory overhead. Your traffic is processed in microseconds to guarantee high speed performance under heavy load.</p>
+        </section>
 
-        <h2>Zero-GC Primitive Performance</h2>
-        <p>To ensure microsecond latency, AegisMesh bypasses traditional object-wrapper overhead. Utilizing modern Chicory APIs, we pass primitive 64-bit numbers (<code>LongArrays</code>) directly into the WebAssembly linear memory sandbox, executing complex mathematics and payload manipulations with absolute zero Garbage Collection (GC) overhead.</p>
-
-        <h2>Bring Your Own Middleware (BYOM)</h2>
-        <p>Your platform engineering teams are not restricted to writing Java plugins. Developers can write their custom L7 middleware in Rust, Go, Zig, or TypeScript, compile it to a standard <code>.wasm</code> binary, and push it to your GitOps repository. AegisMesh dynamically mounts the binary and executes it on the fly.</p>
+        <section>
+            <h2>Write in Any Language</h2>
+            <p>Your developers are not forced to learn new proprietary systems. They can write custom middleware in popular languages like Rust, Go, or TypeScript. Once deployed AegisMesh automatically loads and executes the new rules in real time without requiring restarts.</p>
+        </section>
     </article>
-</div>
+</main>
 
 <footer>
-    <p>&copy; 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
+    <p>Copyright 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
 </footer>
 
 </body>

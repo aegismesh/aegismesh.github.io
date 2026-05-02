@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafka Topology Governance | AegisMesh</title>
+    <meta name="description" content="Natively track topic health, prevent thread starvation, isolate poison pills via DLTs, and manage cluster routing.">
+    <link rel="canonical" href="https://aegismesh.ch/features/kafka-governance.html">
+
+    <meta property="og:title" content="Kafka Topology Governance | AegisMesh">
+    <meta property="og:description" content="Replace standalone monitoring tools. Natively track topic health, prevent thread starvation, and isolate poison pills via DLTs.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aegismesh.ch/features/kafka-governance.html">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "headline": "Kafka Topology Governance",
+            "publisher": {
+                "@type": "Organization",
+                "name": "CryptoBites GmbH"
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/x-icon" href="../scripts/favicon.ico">
+</head>
+<body>
+
+<nav aria-label="Main Navigation">
+    <a href="/" class="nav-logo">AegisMesh</a>
+    <div class="nav-links">
+        <a href="mailto:info@aegismesh.ch">Contact Engineering</a>
+    </div>
+</nav>
+
+<main class="article-container">
+    <a href="/" class="breadcrumb" aria-label="Return to Overview">Back to Overview</a>
+
+    <article>
+        <header>
+            <h1>Kafka Topology Governance</h1>
+            <p class="lead">Replace standalone monitoring tools. AegisMesh natively tracks topic health and isolates poison pills via Dead Letter Topics. It manages cluster routing directly at the edge to keep your streams flowing safely.</p>
+        </header>
+
+        <section>
+            <h2>Isolating Poison Pills</h2>
+            <p>Bad data can easily block your entire event stream. AegisMesh detects malformed messages before they crash your downstream consumers. It automatically routes these poison pills to a Dead Letter Topic (DLT). This allows your teams to inspect the errors without stopping the main data pipeline.</p>
+        </section>
+
+        <section>
+            <h2>Preventing Thread Starvation</h2>
+            <p>High volume traffic spikes can overwhelm standard message brokers. AegisMesh monitors partition lag in real time. It uses backpressure mechanisms to slow down incoming HTTP requests if Kafka struggles to keep up. This prevents thread starvation and keeps your cluster stable under heavy load.</p>
+        </section>
+
+        <section>
+            <h2>The Compression Conflict</h2>
+            <p>Blocking large compressed files at the edge is a necessary security practice. However Kafka relies heavily on compression like Zstandard to maintain high throughput. AegisMesh solves this conflict effortlessly.</p>
+            <p>First the gateway forces external clients to send uncompressed payloads, if not whitelisted. This allows the security engine to validate the raw JSON and block memory exhaustion attacks. Once the data is verified the gateway applies native Kafka compression internally before writing to the broker. Your edge remains secure while your internal messaging stays perfectly optimized.</p>
+        </section>
+    </article>
+</main>
+
+<footer>
+    <p>Copyright 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

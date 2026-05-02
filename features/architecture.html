@@ -3,40 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Core Architecture | AegisMesh</title>
+    <title>Stateless Architecture | AegisMesh</title>
+    <meta name="description" content="Eliminate infrastructure bloat. AegisMesh delivers massive scalability, built-in caching, and instant security validation without external dependencies.">
+    <link rel="canonical" href="https://aegismesh.ch/features/architecture.html">
+
+    <meta property="og:title" content="Stateless Architecture | AegisMesh">
+    <meta property="og:description" content="Eliminate infrastructure bloat. AegisMesh delivers massive scalability, built-in caching, and instant security validation without external dependencies.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aegismesh.ch/features/architecture.html">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "headline": "Stateless Edge Architecture",
+            "publisher": {
+                "@type": "Organization",
+                "name": "CryptoBites GmbH"
+            }
+        }
+    </script>
+
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/x-icon" href="../scripts/favicon.ico">
 </head>
 <body>
 
-<nav>
+<nav aria-label="Main Navigation">
     <a href="/" class="nav-logo">AegisMesh</a>
     <div class="nav-links">
         <a href="mailto:info@aegismesh.ch">Contact Engineering</a>
     </div>
 </nav>
 
-<div class="article-container">
-    <a href="/" class="breadcrumb">&larr; Back to Overview</a>
+<main class="article-container">
+    <a href="/" class="breadcrumb" aria-label="Return to Overview">Back to Overview</a>
 
     <article>
-        <h1>Stateless Edge Architecture</h1>
+        <header>
+            <h1>Stateless Edge Architecture</h1>
+            <p class="lead">Modern service meshes often require complex setups and extra servers. AegisMesh removes this bloat entirely. It provides raw performance and operational simplicity directly out of the box.</p>
+        </header>
 
-        <p>Modern service meshes often rely on bloated architectures requiring heavy sidecars (Envoy), centralized identity servers (Keycloak), and external state stores (Redis). AegisMesh strips away the bloat to give you raw performance and operational simplicity.</p>
+        <section>
+            <h2>Unmatched Performance</h2>
+            <p>AegisMesh is built to handle massive scale effortlessly. It manages tens of thousands of simultaneous requests without slowing down your systems. Heavy processing tasks are isolated automatically to ensure your gateway routing remains lightning fast.</p>
+        </section>
 
-        <h2>Java 25 & Virtual Threads</h2>
-        <p>Built from the ground up for Project Loom. AegisMesh utilizes <code>Virtual Threads</code> to handle tens of thousands of concurrent I/O requests. By offloading heavy CPU tasks like WebAssembly execution and ONNX vector embeddings to dedicated bulkheaded thread pools, the gateway guarantees microsecond routing latency without thread starvation.</p>
+        <section>
+            <h2>Built-In Distributed Caching</h2>
+            <p>Say goodbye to extra licensing costs and unnecessary network delays. AegisMesh includes a fully embedded caching system. It scales automatically alongside your deployment without requiring external databases or complicated server setups.</p>
+        </section>
 
-        <h2>Embedded TCP Infinispan</h2>
-        <p>External dependencies like Redis create licensing headaches and network hops. AegisMesh uses an embedded <strong>Infinispan</strong> cluster configured with TCPPING. When deployed to Kubernetes, gateway nodes discover each other statelessly via standard K8s DNS, forming a highly optimized, distributed rate-limiting cache natively inside the JVM.</p>
-
-        <h2>Zero-Dependency Identity</h2>
-        <p>We dropped heavy OIDC clients. AegisMesh operates as a stateless OAuth2 Resource Server. It resolves Ambient Kubernetes identities, validates M2M API keys cryptographically via SHA-256, and statically caches JWKS public keys to verify JWTs entirely in memory. This eliminates database lookups on the critical path.</p>
+        <section>
+            <h2>Instant Security Validation</h2>
+            <p>Strict security should never slow down your traffic. AegisMesh verifies API keys and user identities instantly in memory. It eliminates the need for slow database lookups to keep your critical paths moving at maximum speed.</p>
+        </section>
     </article>
-</div>
+</main>
 
 <footer>
-    <p>&copy; 2026 CryptoBites GmbH, Zug, Switzerland.</p>
+    <p>Copyright 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
 </footer>
 
 </body>

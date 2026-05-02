@@ -3,40 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Ready Edge | AegisMesh</title>
+    <title>AI Edge Proxy | AegisMesh</title>
+    <meta name="description" content="Protect your AI investments. AegisMesh caches similar prompts to reduce costs, enforces token budgets, and ensures strict data isolation at the edge.">
+    <link rel="canonical" href="https://aegismesh.ch/features/ai-edge.html">
+
+    <meta property="og:title" content="AI Edge Proxy | AegisMesh">
+    <meta property="og:description" content="Protect your AI investments. AegisMesh caches similar prompts to reduce costs, enforces token budgets, and ensures strict data isolation at the edge.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aegismesh.ch/features/ai-edge.html">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "headline": "AI-Ready Edge Proxy",
+            "publisher": {
+                "@type": "Organization",
+                "name": "CryptoBites GmbH"
+            }
+        }
+    </script>
+
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/x-icon" href="../scripts/favicon.ico">
 </head>
 <body>
 
-<nav>
+<nav aria-label="Main Navigation">
     <a href="/" class="nav-logo">AegisMesh</a>
     <div class="nav-links">
         <a href="mailto:info@aegismesh.ch">Contact Engineering</a>
     </div>
 </nav>
 
-<div class="article-container">
-    <a href="/" class="breadcrumb">&larr; Back to Overview</a>
+<main class="article-container">
+    <a href="/" class="breadcrumb" aria-label="Return to Overview">Back to Overview</a>
 
     <article>
-        <h1>AI-Ready Edge Proxy</h1>
+        <header>
+            <h1>AI-Ready Edge Proxy</h1>
+            <p class="lead">Integrating Large Language Models can lead to high API costs and security risks. AegisMesh acts as a protective shield for your AI traffic. It intelligently caches answers and controls your budget directly at the gateway.</p>
+        </header>
 
-        <p>Integrating Large Language Models (LLMs) into enterprise infrastructure introduces extreme latency, massive API costs, and severe prompt injection risks. AegisMesh intercepts outbound AI traffic to sanitize, cache, and govern it natively at the edge.</p>
+        <section>
+            <h2>Instant Semantic Caching</h2>
+            <p>Standard caching fails for AI because users ask the same questions using different words. AegisMesh understands the actual meaning behind a prompt. It instantly serves cached answers for conceptually similar questions. This drastically reduces your external API costs and eliminates response delays.</p>
+        </section>
 
-        <h2>Local ONNX Semantic Caching</h2>
-        <p>Exact-string caching is useless for AI. "What is GitOps?" and "Can you explain GitOps?" mean the exact same thing but have different strings. AegisMesh uses <strong>LangChain4j 1.x</strong> to run a quantized ONNX embedding model (<code>all-minilm-l6-v2</code>) completely locally inside the JVM. It converts incoming prompts into dense vectors in microseconds, bypassing external embedding APIs entirely.</p>
+        <section>
+            <h2>Strict Data Isolation</h2>
+            <p>Sharing an AI cache across different customers can cause massive security breaches. AegisMesh strictly isolates all cached intelligence by tenant. This guarantees that sensitive information never leaks across organizational boundaries. Your data remains perfectly secure and compliant.</p>
+        </section>
 
-        <h2>VectorDB Tenant Isolation</h2>
-        <p>Semantic caches are dangerous in multi-tenant environments if not strictly segregated. Vectors are queried against an attached <strong>Milvus</strong> database. AegisMesh injects strict <code>tenantId</code> and Time-To-Live (TTL) metadata filters into the VectorDB queries, guaranteeing that semantic hits never leak data across organizational boundaries or serve outdated intelligence.</p>
-
-        <h2>Token Quotas (TPM SLA)</h2>
-        <p>Rate limiting AI by "requests per minute" is obsolete. AegisMesh intercepts the payload, runs it through a <code>CL100K_BASE</code> tokenizer, and counts the exact tokens. It enforces strict Tokens-Per-Minute (TPM) SLAs on a per-user and per-tenant basis via our embedded Infinispan cluster, dropping traffic with a <code>429</code> if a tenant exceeds their LLM budget.</p>
+        <section>
+            <h2>Granular Cost Control</h2>
+            <p>Traditional request limits do not work well for AI models. AegisMesh counts the exact tokens consumed by each prompt. It enforces strict usage budgets per user and per tenant. This immediately prevents unexpected bills and guarantees fair resource distribution across your platform.</p>
+        </section>
     </article>
-</div>
+</main>
 
 <footer>
-    <p>&copy; 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
+    <p>Copyright 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
 </footer>
 
 </body>

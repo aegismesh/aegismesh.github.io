@@ -3,40 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banking-Grade Security | AegisMesh</title>
+    <title>Banking-Grade Edge Security | AegisMesh</title>
+    <meta name="description" content="Discover how AegisMesh enforces Zero-Trust security via AST-based Data Loss Prevention, Zip Bomb HTTP protection, and GitOps RBAC for Swiss banking compliance.">
+    <link rel="canonical" href="https://aegismesh.ch/features/security.html">
+
+    <meta property="og:title" content="Banking-Grade Edge Security | AegisMesh">
+    <meta property="og:description" content="Discover how AegisMesh enforces Zero-Trust security via AST-based Data Loss Prevention, Zip Bomb HTTP protection, and GitOps RBAC for Swiss banking compliance.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aegismesh.ch/features/security.html">
+
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/x-icon" href="../scripts/favicon.ico">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "headline": "Banking-Grade Edge Security in AegisMesh",
+            "publisher": {
+                "@type": "Organization",
+                "name": "CryptoBites GmbH"
+            }
+        }
+    </script>
 </head>
 <body>
 
-<nav>
+<nav aria-label="Main Navigation">
     <a href="/" class="nav-logo">AegisMesh</a>
     <div class="nav-links">
         <a href="mailto:info@aegismesh.ch">Contact Engineering</a>
     </div>
 </nav>
 
-<div class="article-container">
-    <a href="/" class="breadcrumb">&larr; Back to Overview</a>
+<main class="article-container">
+    <a href="/" class="breadcrumb" aria-label="Return to Overview">Back to Overview</a>
 
     <article>
-        <h1>Banking-Grade Security</h1>
+        <header>
+            <h1>Banking-Grade Security</h1>
+            <p class="lead">Built in Zug, Switzerland, AegisMesh is engineered to meet the strictest FINMA, SOC2, and GDPR data sovereignty requirements. Security is not an afterthought or a plugin. It is the absolute foundation of our routing engine.</p>
+        </header>
 
-        <p>Built in Zug, Switzerland, AegisMesh is engineered to meet the strictest FINMA and GDPR data sovereignty requirements. Security is not a plugin, it is the core routing foundation.</p>
+        <section>
+            <h2>Abstract Syntax Tree Data Loss Prevention</h2>
+            <p>Traditional API gateways apply brute-force Regular Expressions over raw HTTP byte arrays. This leads to two massive failures. It causes severe CPU spikes during attacks and corrupts embedded binary streams.</p>
+            <p>AegisMesh abandons Regex for structural intelligence. It parses incoming and outgoing JSON into a strict Abstract Syntax Tree. The DLP engine traverses only valid textual nodes to redact sensitive information like Swiss IBANs or Credit Card numbers. It leaves the surrounding data structure and binary payloads perfectly intact.</p>
+        </section>
 
-        <h2>AST-Based Data Loss Prevention (DLP)</h2>
-        <p>Traditional API gateways apply brute-force Regex over raw HTTP byte arrays. This causes Regex Denial of Service (ReDoS) CPU spikes and frequently corrupts embedded base64 binaries. AegisMesh parses JSON into a strict <strong>Abstract Syntax Tree (AST)</strong> using Jackson, traversing only textual values to redact sensitive PII (like Swiss IBANs or Credit Cards) without altering the structural integrity or binary payloads.</p>
+        <section>
+            <h2>Identity Spoofing and Zip Bomb Defense</h2>
+            <p>We assume the internal network is already compromised. AegisMesh violently strips spoofed internal routing headers pushed by external actors.</p>
+            <p>To defend against protocol-level attacks AegisMesh intercepts and drops highly compressed payloads natively at the edge. This prevents attackers from uploading tiny Zip Bombs that expand to gigabytes in memory. It actively protects the downstream JVM from catastrophic memory failures.</p>
+        </section>
 
-        <h2>Hierarchical GitOps RBAC</h2>
-        <p>Authorization is defined entirely via declarative YAML. AegisMesh features a two-tier policy engine: <strong>Cluster Master Policies</strong> enforce non-negotiable global constraints (like DDoS limits and inbound DLP), while <strong>Tenant Namespace Policies</strong> allow product teams to define granular endpoint roles. Any deviation from the GitOps source of truth is instantly blocked with a 403 Forbidden.</p>
+        <section>
+            <h2>Constant-Time Cryptography and Key Management</h2>
+            <p>Machine-to-Machine API keys are never stored in plain text. AegisMesh registers identities using cryptographic hashes via immutable GitOps pipelines. When validating keys the gateway utilizes constant-time comparison algorithms. This completely eliminates side-channel timing attacks that attempt to guess secret lengths.</p>
+        </section>
 
-        <h2>Ambient Identity & Zero-Trust</h2>
-        <p>Never trust the network. AegisMesh resolves identities from multiple vectors simultaneously: Kubernetes Service Accounts (Ambient Mesh), mTLS client certificates, and cryptographically verified API Keys (via SHA-256 hash lookup). Spoofed internal headers are violently stripped. Every L7 routing decision is seamlessly upgraded to a short-lived, locally signed RSA-4096 JWT for secure downstream context.</p>
+        <section>
+            <h2>Hierarchical GitOps RBAC</h2>
+            <p>Authorization is declared entirely via YAML and synchronized dynamically. AegisMesh implements a powerful two-tier policy engine.</p>
+            <ul>
+                <li><strong>Cluster Master Policies:</strong> Enforce non-negotiable global constraints declared by SecOps.</li>
+                <li><strong>Tenant Namespace Policies:</strong> Allow autonomous product teams to define granular endpoint roles without waiting on centralized IT tickets.</li>
+            </ul>
+        </section>
     </article>
-</div>
+</main>
 
 <footer>
-    <p>&copy; 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
+    <p>Copyright 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
 </footer>
 
 </body>
