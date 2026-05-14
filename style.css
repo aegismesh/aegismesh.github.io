@@ -198,6 +198,7 @@ footer a:hover { color: var(--text-main); }
 
 .hero-title-wrapper {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 24px;
@@ -208,6 +209,7 @@ footer a:hover { color: var(--text-main); }
     width: 80px;
     height: auto;
     flex-shrink: 0;
+    display: block;
 }
 
 .hero-title-wrapper h1 {
