@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rigorous Engineering & Testing | AegisMesh</title>
+    <meta name="description" content="AegisMesh is built with strict Test-Driven Development (TDD) and validated through intense chaos engineering and k6 performance testing.">
+    <link rel="canonical" href="https://aegismesh.ch/features/testing.html">
+
+    <meta property="og:title" content="Rigorous Engineering & Testing | AegisMesh">
+    <meta property="og:description" content="Built with Test-Driven Development (TDD), verified through Chaos Engineering, and soak-tested against maximum throughput concurrency.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aegismesh.ch/features/testing.html">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "headline": "Rigorous Engineering & Testing",
+            "publisher": {
+                "@type": "Organization",
+                "name": "CryptoBites GmbH"
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/x-icon" href="../scripts/favicon.ico">
+</head>
+<body>
+
+<nav aria-label="Main Navigation">
+    <a href="/" class="nav-logo">AegisMesh</a>
+    <div class="nav-links">
+        <a href="mailto:info@aegismesh.ch">Contact Engineering</a>
+    </div>
+</nav>
+
+<main class="article-container">
+    <a href="/" class="breadcrumb" aria-label="Return to Overview">Back to Overview</a>
+
+    <article>
+        <header>
+            <h1>Engineered for Extreme Reliability</h1>
+            <p class="lead">Enterprise infrastructure cannot be built on assumptions. Every feature, security patch, and semantic routing protocol inside AegisMesh is scientifically proven by an exhaustive suite of automated tests.</p>
+        </header>
+
+        <section>
+            <h2>Test-Driven Development (TDD)</h2>
+            <p>We do not write code and hope it works. AegisMesh follows a strict Test-Driven Development methodology. Before a security flaw is patched or a new feature like Agent Capability Vectorization is added, we write the exact integration test that proves the failure. The system is then engineered until the test passes, resulting in a codebase with zero regressions and absolute behavioral certainty.</p>
+        </section>
+
+        <section>
+            <h2>Chaos Engineering & Broker Resilience</h2>
+            <p>Systems fail. Message brokers crash. AegisMesh is routinely subjected to automated Chaos Engineering. We simulate catastrophic Kafka and RabbitMQ cluster outages to prove our circuit breakers fail fast. We verify that in the event of an outage, our Dead Letter Queue (DLQ) managers flawlessly spool in-flight payloads to persistent storage, ensuring exactly zero bytes of financial data are lost.</p>
+        </section>
+
+        <section>
+            <h2>High-Concurrency Load Validation</h2>
+            <p>An API Gateway must not buckle under traffic spikes. We utilize K6 distributed load testing to hammer AegisMesh with extreme HTTP-to-Kafka throughput and massive JSON payloads. This continuous soak testing proves our lock-free Distributed Rate Limiter and Java 25 Virtual Thread execution environments remain fully operational without JVM OutOfMemory (OOM) errors, thread starvation, or Zip Bomb expansions.</p>
+        </section>
+
+        <section>
+            <h2>Idempotency & Race Condition Prevention</h2>
+            <p>Financial pipelines cannot afford double-spends. AegisMesh is tested heavily against concurrent race conditions. Our Infinispan cluster caching guarantees that duplicate transaction requests from clients are perfectly isolated and locked, ensuring stable, side-effect-free message delivery across the mesh.</p>
+        </section>
+    </article>
+</main>
+
+<footer>
+    <p>Copyright 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

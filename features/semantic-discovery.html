@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Agent Discovery | AegisMesh</title>
+    <meta name="description" content="AegisMesh intelligently routes tasks between AI Agents using Model Context Protocol (MCP) capability cards and Milvus-powered Semantic Vector similarity.">
+    <link rel="canonical" href="https://aegismesh.ch/features/semantic-discovery.html">
+
+    <meta property="og:title" content="Semantic Agent Discovery | AegisMesh">
+    <meta property="og:description" content="Intelligently route tasks between AI Agents using Model Context Protocol (MCP) capability cards and Milvus-powered Semantic Vector similarity.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aegismesh.ch/features/semantic-discovery.html">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "headline": "Semantic Agent Discovery",
+            "publisher": {
+                "@type": "Organization",
+                "name": "CryptoBites GmbH"
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/x-icon" href="../scripts/favicon.ico">
+</head>
+<body>
+
+<nav aria-label="Main Navigation">
+    <a href="/" class="nav-logo">AegisMesh</a>
+    <div class="nav-links">
+        <a href="mailto:info@aegismesh.ch">Contact Engineering</a>
+    </div>
+</nav>
+
+<main class="article-container">
+    <a href="/" class="breadcrumb" aria-label="Return to Overview">Back to Overview</a>
+
+    <article>
+        <header>
+            <h1>Semantic Agent Discovery</h1>
+            <p class="lead">The future of enterprise architecture is Multi-Agent. AegisMesh acts as the central nervous system for Agent-to-Agent (A2A) communication, utilizing LangChain4j and Milvus to semantically route tasks based on Agent Capability Cards.</p>
+        </header>
+
+        <section>
+            <h2>Model Context Protocol (MCP) Registry</h2>
+            <p>Static point-to-point API routing fails in autonomous AI environments. AegisMesh provides a dynamic Agent Registry. AI Agents register their "Capability Cards" detailing their exact skills, descriptions, and endpoints. The mesh exposes these standardized tools to other agents, allowing seamless integration across organizational silos.</p>
+        </section>
+
+        <section>
+            <h2>Vectorized Task Routing</h2>
+            <p>When an agent requires assistance it does not need to know the exact endpoint of the target service. It simply sends a natural language task description to the Gateway. AegisMesh generates an embedding vector of the request and queries a Milvus Vector Database using Cosine Similarity. The request is instantly routed to the Agent with the highest matching Capability Score.</p>
+        </section>
+
+        <section>
+            <h2>Strict BOLA & Hallucination Guardrails</h2>
+            <p>Allowing AI agents to communicate freely creates massive security risks, such as Broken Object Level Authorization (BOLA). AegisMesh strictly bounds MCP resource reads and tool calls against the GitOps RBAC pipeline. If an agent hallucinates a tool call, or attempts to access a Kafka stream outside its namespace, the mesh severs the connection immediately to prevent internal data leakage.</p>
+        </section>
+
+        <section>
+            <h2>Stateless Edge Architecture</h2>
+            <p>Powered by Java 25 Virtual Threads and embedded TCP Infinispan, AegisMesh removes infrastructure bloat entirely. Heavy processing tasks are isolated automatically to ensure your gateway routing remains lightning fast without needing Envoy sidecars or Redis clusters.</p>
+        </section>
+    </article>
+</main>
+
+<footer>
+    <p>Copyright 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banking-Grade Edge Security | AegisMesh</title>
-    <meta name="description" content="Discover how AegisMesh enforces Zero-Trust security via AST-based Data Loss Prevention, Zip Bomb HTTP protection, and GitOps RBAC for Swiss banking compliance.">
+    <meta name="description" content="Discover how AegisMesh enforces Zero-Trust security via BOLA prevention, AST-based Data Loss Prevention, and robust SSTI/Log4Shell HTTP protection.">
     <link rel="canonical" href="https://aegismesh.ch/features/security.html">
 
     <meta property="og:title" content="Banking-Grade Edge Security | AegisMesh">
-    <meta property="og:description" content="Discover how AegisMesh enforces Zero-Trust security via AST-based Data Loss Prevention, Zip Bomb HTTP protection, and GitOps RBAC for Swiss banking compliance.">
+    <meta property="og:description" content="Discover how AegisMesh enforces Zero-Trust security via BOLA prevention, AST-based Data Loss Prevention, and robust SSTI/Log4Shell HTTP protection.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://aegismesh.ch/features/security.html">
 
@@ -41,33 +41,27 @@
     <article>
         <header>
             <h1>Banking-Grade Security</h1>
-            <p class="lead">Built in Zug, Switzerland, AegisMesh is engineered to meet the strictest FINMA, SOC2, and GDPR data sovereignty requirements. Security is not an afterthought or a plugin. It is the absolute foundation of our routing engine.</p>
+            <p class="lead">Built in Zug, Switzerland, AegisMesh is engineered to meet the strictest FINMA, SOC2, and GDPR data sovereignty requirements. We assume the internal network is compromised and actively hunt for privilege escalation and BOLA attempts inside your mesh.</p>
         </header>
 
         <section>
+            <h2>Zero-Trust Identity & BOLA Prevention</h2>
+            <p>Broken Object Level Authorization (BOLA) is the leading cause of internal data breaches. AegisMesh actively maps incoming traffic against GitOps roles without relying on global blanket grants. When bridging protocols, such as an AI agent reading Kafka topics over HTTP, the gateway intercepts the requested resource and rigorously validates read/write access against the exact tenant scope to prevent unauthorized stream extraction.</p>
+        </section>
+
+        <section>
+            <h2>Defeating Advanced HTTP Exploits</h2>
+            <p>Attackers frequently use malformed URL encodings to bypass perimeter defenses. AegisMesh implements a strict fail-closed URL decoder to prevent Path Traversal injections. The WAF dynamically scans all HTTP headers, not just the User-Agent, to intercept Expression Language attacks, effectively neutralizing Log4Shell and SSTI payloads before they ever reach your vulnerable legacy backend applications.</p>
+        </section>
+
+        <section>
             <h2>Abstract Syntax Tree Data Loss Prevention</h2>
-            <p>Traditional API gateways apply brute-force Regular Expressions over raw HTTP byte arrays. This leads to two massive failures. It causes severe CPU spikes during attacks and corrupts embedded binary streams.</p>
-            <p>AegisMesh abandons Regex for structural intelligence. It parses incoming and outgoing JSON into a strict Abstract Syntax Tree. The DLP engine traverses only valid textual nodes to redact sensitive information like Swiss IBANs or Credit Card numbers. It leaves the surrounding data structure and binary payloads perfectly intact.</p>
+            <p>Traditional API gateways apply brute-force Regular Expressions over raw byte arrays, corrupting embedded binary files and spiking CPU utilization. AegisMesh parses JSON into a strict Abstract Syntax Tree (AST). Our engine traverses only valid textual nodes to redact sensitive Swiss IBANs or credit card numbers, guaranteeing flawless Data Loss Prevention (DLP) without altering the surrounding structure or array formatting.</p>
         </section>
 
         <section>
-            <h2>Identity Spoofing and Zip Bomb Defense</h2>
-            <p>We assume the internal network is already compromised. AegisMesh violently strips spoofed internal routing headers pushed by external actors.</p>
-            <p>To defend against protocol-level attacks AegisMesh intercepts and drops highly compressed payloads natively at the edge. This prevents attackers from uploading tiny Zip Bombs that expand to gigabytes in memory. It actively protects the downstream JVM from catastrophic memory failures.</p>
-        </section>
-
-        <section>
-            <h2>Constant-Time Cryptography and Key Management</h2>
-            <p>Machine-to-Machine API keys are never stored in plain text. AegisMesh registers identities using cryptographic hashes via immutable GitOps pipelines. When validating keys the gateway utilizes constant-time comparison algorithms. This completely eliminates side-channel timing attacks that attempt to guess secret lengths.</p>
-        </section>
-
-        <section>
-            <h2>Hierarchical GitOps RBAC</h2>
-            <p>Authorization is declared entirely via YAML and synchronized dynamically. AegisMesh implements a powerful two-tier policy engine.</p>
-            <ul>
-                <li><strong>Cluster Master Policies:</strong> Enforce non-negotiable global constraints declared by SecOps.</li>
-                <li><strong>Tenant Namespace Policies:</strong> Allow autonomous product teams to define granular endpoint roles without waiting on centralized IT tickets.</li>
-            </ul>
+            <h2>Constant-Time Cryptography</h2>
+            <p>Machine-to-Machine API keys are securely hashed via immutable GitOps pipelines. AegisMesh utilizes strict constant-time byte-array comparisons when validating credentials. This completely eliminates side-channel timing attacks that allow malicious actors to brute-force secret lengths.</p>
         </section>
     </article>
 </main>

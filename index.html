@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AegisMesh | Zero-Trust API Gateway & Kafka Service Mesh</title>
-    <meta name="description" content="AegisMesh is an enterprise Java 25 Zero-Trust gateway combining service-mesh, API gateway, Kafka topology governance, and AI edge proxy capabilities for Swiss banking compliance.">
-    <meta name="keywords" content="Service Mesh, API Gateway, Kafka Governance, Kafka governance alternative, Zero-Trust, Java 25, WebAssembly">
+    <title>AegisMesh | Zero-Trust API Gateway & Semantic Agent Router</title>
+    <meta name="description" content="AegisMesh is an enterprise Java 25 Zero-Trust gateway combining Semantic Agent Discovery, Kafka topology governance, and AI edge proxy capabilities for Swiss banking compliance.">
+    <meta name="keywords" content="Semantic Routing, Agent Registry, MCP, Service Mesh, API Gateway, Kafka Governance, Zero-Trust, Java 25">
 
-    <meta property="og:title" content="AegisMesh | Zero-Trust Omni-Gateway">
-    <meta property="og:description" content="Eliminate middleware. Bridge HTTP natively to Kafka topics, protect LLMs at the edge, and enforce strict FINMA compliance.">
+    <meta property="og:title" content="AegisMesh | Zero-Trust Agentic Omni-Gateway">
+    <meta property="og:description" content="Dynamically route AI agents using semantic discovery. Bridge HTTP natively to Kafka topics, protect LLMs at the edge, and enforce strict FINMA compliance.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aegismesh.ch/">
 
@@ -19,8 +19,8 @@
             "name": "AegisMesh",
             "operatingSystem": "Kubernetes",
             "applicationCategory": "SecurityApplication",
-            "description": "Stateless Zero-Trust gateway combining API governance and Kafka infrastructure routing.",
-            "softwareVersion": "1.0",
+            "description": "Stateless Zero-Trust gateway combining Semantic Agent Routing and Kafka infrastructure governance.",
+            "softwareVersion": "1.1",
             "offers": {
                 "@type": "Offer",
                 "price": "0",
@@ -43,26 +43,31 @@
 
 <main class="container">
     <header class="hero">
-        <h1>The Zero-Trust<br>Omni-Gateway.</h1>
-        <p class="hero-subtitle">Combine Service Mesh, API Gateway, Kafka Topology Management, and AI Edge Proxy capabilities into one stateless, compliance-ready architecture powered by Java 25.</p>
+        <h1>The Zero-Trust<br>Agentic Gateway.</h1>
+        <p class="hero-subtitle">Combine Semantic Agent Discovery, Service Mesh, Kafka Topology Management, and AI Edge Proxy capabilities into one stateless, compliance-ready architecture powered by Java 25.</p>
         <a href="mailto:info@aegismesh.ch" class="btn" aria-label="Request Early Access">Request Early Access</a>
         <a href="#features" class="btn btn-outline" aria-label="Explore Features">Explore Features</a>
     </header>
 
     <section id="features" class="grid" aria-label="Core Features">
         <article class="card">
-            <h3><a href="features/architecture.html">Stateless Architecture</a></h3>
-            <p>Powered by Java 25 Virtual Threads and embedded TCP Infinispan. Zero Redis, zero sidecars, maximum throughput without the complexity of Envoy.</p>
+            <h3><a href="features/semantic-discovery.html">Semantic Agent Discovery</a></h3>
+            <p>Decouple your AI agents. AegisMesh uses Milvus Vector DB and LangChain4j to dynamically map tasks to the correct agent using capability cards and cosine similarity.</p>
+        </article>
+
+        <article class="card">
+            <h3><a href="features/ai-edge.html">AI Edge Proxy</a></h3>
+            <p>Protect your AI investments. Securely integrate the Model Context Protocol (MCP), cache semantic prompts to reduce token costs, and enforce strict API budgets per tenant.</p>
         </article>
 
         <article class="card">
             <h3><a href="features/security.html">Banking-Grade Security</a></h3>
-            <p>GitOps-driven RBAC, AST-based JSON Data Loss Prevention (DLP), API Key Cryptography, and hardware-backed mTLS authentication.</p>
+            <p>GitOps-driven RBAC, AST-based Data Loss Prevention (DLP), BOLA prevention for data streams, and deep header inspection to stop SSTI and Log4Shell attacks natively.</p>
         </article>
 
         <article class="card">
-            <h3><a href="features/kafka-governance.html">Kafka Topology Governance</a></h3>
-            <p>Replace standalone monitoring tools. Natively track topic health, prevent thread starvation, isolate poison pills via DLTs, and manage cluster routing.</p>
+            <h3><a href="features/testing.html">Rigorous Resilience</a></h3>
+            <p>Built using an aggressive Test-Driven Development (TDD) methodology. Continuous K6 soak testing and chaotic fault-tolerance simulation ensure ultimate gateway stability.</p>
         </article>
 
         <article class="card">
@@ -71,13 +76,8 @@
         </article>
 
         <article class="card">
-            <h3><a href="features/ai-edge.html">AI-Ready Edge</a></h3>
-            <p>Local ONNX embeddings, LangChain4j, and Milvus VectorDB integration for instant Semantic Caching and LLM Token Quota enforcement.</p>
-        </article>
-
-        <article class="card">
-            <h3><a href="features/wasm.html">WebAssembly (WASM)</a></h3>
-            <p>Write custom edge middleware in Rust or Go. Executed natively inside the JVM via Chicory with absolute linear-memory safety.</p>
+            <h3><a href="features/kafka-governance.html">Kafka Topology Governance</a></h3>
+            <p>Replace standalone monitoring tools. Natively track topic health, prevent thread starvation, isolate poison pills via DLTs, and manage cluster routing.</p>
         </article>
     </section>
 </main>
