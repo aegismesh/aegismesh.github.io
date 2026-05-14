@@ -195,3 +195,33 @@ footer a:hover { color: var(--text-main); }
     h1 { font-size: 2.5rem; }
     .nav-links { display: none; }
 }
+
+.hero-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.hero-logo {
+    width: 80px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.hero-title-wrapper h1 {
+    margin: 0;
+    text-align: left;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 80px 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 0 0 80px 0;
+}
