@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Governance & LLM Edge Proxy | AegisMesh</title>
-    <meta name="description" content="Protect your AI Platform with AegisMesh. Implement Semantic Prompt Caching, enforce LLM token budgets, and ensure strict AI Governance at the edge.">
-    <meta name="keywords" content="AI Governance, LLM Edge Proxy, AI Platform, Semantic Prompt Caching, LLM Token Quotas, FinOps AI, Data Isolation, Prompt Injection Defense">
+    <title>AI FinOps & Guardrails | AegisMesh</title>
+    <meta name="description" content="Protect your AI Platform with AegisMesh. Implement Human-in-the-Loop (HITL) approvals, enforce FinOps token budgets, and deploy Semantic Prompt Caching.">
+    <meta name="keywords" content="AI Governance, LLM Edge Proxy, AI Platform, Semantic Prompt Caching, LLM Token Quotas, FinOps AI, Data Isolation, Prompt Injection Defense, HITL, Human in the Loop">
     <link rel="canonical" href="https://aegismesh.ch/features/ai-edge.html">
 
-    <meta property="og:title" content="AI Governance & LLM Edge Proxy | AegisMesh">
-    <meta property="og:description" content="AegisMesh caches similar RAG prompts to reduce costs, enforces FinOps token budgets, and ensures strict Zero-Trust AI Governance at the edge.">
+    <meta property="og:title" content="AI Governance, HITL & LLM Edge Proxy | AegisMesh">
+    <meta property="og:description" content="AegisMesh caches RAG prompts to reduce costs, enforces FinOps token budgets, and parks mutating AI actions for Human-in-the-Loop (HITL) approvals.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://aegismesh.ch/features/ai-edge.html">
+    <meta property="og:image" content="https://aegismesh.ch/scripts/omnimesh-logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Governance, HITL & LLM Edge Proxy | AegisMesh">
+    <meta name="twitter:description" content="AegisMesh caches RAG prompts to reduce costs, enforces FinOps token budgets, and parks mutating AI actions for Human-in-the-Loop (HITL) approvals.">
+    <meta name="twitter:image" content="https://aegismesh.ch/scripts/omnimesh-logo.png">
 
     <script type="application/ld+json">
         {
@@ -19,10 +25,10 @@
             "@type": "FAQPage",
             "mainEntity": [{
                 "@type": "Question",
-                "name": "How does AegisMesh handle AI Governance?",
+                "name": "How does AegisMesh handle Human-in-the-Loop (HITL)?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "AegisMesh enforces AI Governance by intercepting traffic at the edge to block prompt injections, enforce token quotas, and redact sensitive PII before it reaches external LLMs."
+                    "text": "AegisMesh intercepts mutating actions taken by AI agents and parks them in an Infinispan-backed cache. The execution is suspended until a verified human explicitly approves the action."
                 }
             }, {
                 "@type": "Question",
@@ -48,13 +54,25 @@
 </nav>
 
 <main class="article-container">
-    <a href="/" class="breadcrumb" aria-label="Return to Overview">Back to Overview</a>
+    <nav aria-label="Breadcrumb">
+        <a href="/" class="breadcrumb">Back to Overview</a>
+    </nav>
 
     <article>
         <header>
             <h1>AI Governance & LLM Edge Proxy</h1>
-            <p class="lead">Integrating Multi-Agent Frameworks can lead to high API costs, FinOps unpredictability, and severe security risks. AegisMesh acts as an intelligent AI Platform Gateway, caching answers and governing your budgets directly at the perimeter.</p>
+            <p class="lead">Integrating Multi-Agent Frameworks can lead to high API costs, FinOps unpredictability, and severe security risks. AegisMesh acts as an intelligent AI Platform Gateway, bringing strict oversight to autonomous agent behavior.</p>
         </header>
+
+        <section>
+            <h2>Human-in-the-Loop (HITL) Execution</h2>
+            <p>Allowing autonomous agents to freely execute state-changing actions presents a catastrophic risk. AegisMesh natively intercepts sensitive Model Context Protocol (MCP) tool calls (like wire transfers or database mutations) and safely parks the payloads in a clustered Infinispan cache. The AI's task is suspended until a verified human operator explicitly approves the payload via the control plane, ensuring ultimate safety.</p>
+        </section>
+
+        <section>
+            <h2>FinOps Chargebacks & Token Budgets</h2>
+            <p>Uncontrolled multi-agent scaling leads to billing surprises. Using native OpenTelemetry GenAI semantics, AegisMesh tracks and aggregates precise Token-Per-Minute (TPM) consumption cross-referenced by OIDC Agent Identity and Tenant boundaries. It actively enforces budget limits dynamically to prevent runaway cloud provider costs and alerts on unauthorized LLM Shadow IT.</p>
+        </section>
 
         <section>
             <h2>Instant Semantic Prompt Caching</h2>
@@ -62,13 +80,8 @@
         </section>
 
         <section>
-            <h2>Strict Multi-Tenant Data Isolation</h2>
-            <p>Sharing an AI Vector Cache across different privilege levels can cause massive security breaches. AegisMesh strictly isolates all RAG intelligence by Tenant ID and GitOps RBAC roles. This guarantees that sensitive information retrieved by an executive never leaks to a guest user asking the same question.</p>
-        </section>
-
-        <section>
-            <h2>Prompt Injection Defense</h2>
-            <p>AegisMesh acts as an AI Firewall. Natively executing external process (ExtProc) analysis, it identifies and intercepts malicious Prompt Injections before they reach your internal Agentic Frameworks, ensuring that autonomous agents cannot be socially engineered into executing unauthorized actions.</p>
+            <h2>Prompt Injection Defense & Data Isolation</h2>
+            <p>AegisMesh acts as an AI Firewall. Natively executing external process (ExtProc) ML analysis, it identifies and intercepts malicious Indirect Prompt Injections before they reach your internal Agentic Frameworks. Furthermore, all retrieved RAG context is strictly isolated by Tenant ID and GitOps RBAC roles, guaranteeing that sensitive information retrieved by an executive never leaks to a guest user.</p>
         </section>
     </article>
 </main>

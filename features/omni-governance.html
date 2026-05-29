@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omni Governance Control Plane | AegisMesh</title>
+    <meta name="description" content="Manage Kafka topologies, enforce schema compatibility, detect configuration drift, and perform safe DLQ replays with the Omni Governance Control Plane.">
+    <link rel="canonical" href="https://aegismesh.ch/features/omni-governance.html">
+
+    <meta property="og:title" content="Omni Governance Control Plane | AegisMesh">
+    <meta property="og:description" content="Manage Kafka topologies, enforce schema compatibility, detect configuration drift, and perform safe DLQ replays with the Omni Governance Control Plane.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aegismesh.ch/features/omni-governance.html">
+    <meta property="og:image" content="https://aegismesh.ch/scripts/omnimesh-logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Omni Governance Control Plane | AegisMesh">
+    <meta name="twitter:description" content="Manage Kafka topologies, enforce schema compatibility, detect configuration drift, and perform safe DLQ replays.">
+    <meta name="twitter:image" content="https://aegismesh.ch/scripts/omnimesh-logo.png">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "headline": "Omni Governance Control Plane",
+            "image": "https://aegismesh.ch/scripts/omnimesh-logo.png",
+            "author": {
+                "@type": "Organization",
+                "name": "CryptoBites GmbH",
+                "url": "https://aegismesh.ch"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "CryptoBites GmbH",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://aegismesh.ch/scripts/omnimesh-logo.png"
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/x-icon" href="../scripts/favicon.ico">
+</head>
+<body>
+
+<nav aria-label="Main Navigation">
+    <a href="/" class="nav-logo">AegisMesh</a>
+    <div class="nav-links">
+        <a href="mailto:info@aegismesh.ch">Contact Engineering</a>
+    </div>
+</nav>
+
+<main class="article-container">
+    <nav aria-label="Breadcrumb">
+        <a href="/" class="breadcrumb">Back to Overview</a>
+    </nav>
+
+    <article>
+        <header>
+            <h1>Omni Governance Control Plane</h1>
+            <p class="lead">Replace disjointed standalone monitoring tools. The AegisMesh Omni Governance Control Plane brings native Kafka management, Schema Registry control, and DLQ tracking under a single, unified GitOps-driven dashboard.</p>
+        </header>
+
+        <section>
+            <h2>Kafka Data Explorer & PII Guardrails</h2>
+            <p>Allowing developers raw access to production message brokers is a massive compliance risk. The Omni Control Plane provides a secure Data Explorer. Kafka messages are dynamically deserialized and sensitive PII (like IBANs or credit cards) is masked on-the-fly based strictly on the requester's exact OIDC role before being rendered to the UI.</p>
+        </section>
+
+        <section>
+            <h2>Consumer Rewind Time-Travel</h2>
+            <p>Incident recovery often requires resetting Kafka offsets, which traditionally demands privileged CLI broker access. AegisMesh offers self-service "Time-Travel". Developers can instantly rewind their specific Consumer Group offsets to an exact target timestamp safely through the mesh without compromising cluster security.</p>
+        </section>
+
+        <section>
+            <h2>Continuous Drift Detection</h2>
+            <p>AegisMesh continuously monitors your infrastructure against the declarative GitOps state. It instantly flags configuration mismatches, orphaned Dead Letter Queues (DLQs), missing schemas, failed Kafka Connect tasks, and Shadow ACLs that bypass the mesh proxy.</p>
+        </section>
+
+        <section>
+            <h2>DLQ Orchestration & Safe Replay</h2>
+            <p>Bad data can easily block your entire event stream. AegisMesh automatically routes poison pills and HTTP failures to a persistent Dead Letter Queue (DLQ). Operators can use the governance API to inspect the failed payloads, correct schema violations natively, and execute a synchronized replay directly back into the live data-plane without manual scripting.</p>
+        </section>
+    </article>
+</main>
+
+<footer>
+    <p>Copyright 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

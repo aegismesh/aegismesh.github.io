@@ -11,15 +11,31 @@
     <meta property="og:description" content="Built with Test-Driven Development (TDD), verified through Chaos Engineering, and soak-tested against maximum throughput concurrency.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://aegismesh.ch/features/testing.html">
+    <meta property="og:image" content="https://aegismesh.ch/scripts/omnimesh-logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rigorous Engineering & Testing | AegisMesh">
+    <meta name="twitter:description" content="Built with Test-Driven Development (TDD), verified through Chaos Engineering, and soak-tested against maximum throughput concurrency.">
+    <meta name="twitter:image" content="https://aegismesh.ch/scripts/omnimesh-logo.png">
 
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "TechArticle",
             "headline": "Rigorous Engineering & Testing",
+            "image": "https://aegismesh.ch/scripts/omnimesh-logo.png",
+            "author": {
+                "@type": "Organization",
+                "name": "CryptoBites GmbH",
+                "url": "https://aegismesh.ch"
+            },
             "publisher": {
                 "@type": "Organization",
-                "name": "CryptoBites GmbH"
+                "name": "CryptoBites GmbH",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://aegismesh.ch/scripts/omnimesh-logo.png"
+                }
             }
         }
     </script>
@@ -37,13 +53,20 @@
 </nav>
 
 <main class="article-container">
-    <a href="/" class="breadcrumb" aria-label="Return to Overview">Back to Overview</a>
+    <nav aria-label="Breadcrumb">
+        <a href="/" class="breadcrumb">Back to Overview</a>
+    </nav>
 
     <article>
         <header>
             <h1>Engineered for Extreme Reliability</h1>
             <p class="lead">Enterprise infrastructure cannot be built on assumptions. Every feature, security patch, and semantic routing protocol inside AegisMesh is scientifically proven by an exhaustive suite of automated tests.</p>
         </header>
+
+        <section>
+            <h2>Domain-Driven Architecture Enforcement</h2>
+            <p>Spaghetti code causes outages. AegisMesh uses <strong>ArchUnit</strong> to scientifically enforce Domain-Driven Design (DDD) boundaries during the build phase. Our Continuous Integration pipeline automatically rejects any code where the Data Plane improperly tangles with the Control Plane, or where isolated bounded contexts (like AI, Streaming, or Governance) communicate directly without using strict Service Provider Interfaces (SPIs).</p>
+        </section>
 
         <section>
             <h2>Test-Driven Development (TDD)</h2>
@@ -60,10 +83,6 @@
             <p>An API Gateway must not buckle under traffic spikes. We utilize K6 distributed load testing to hammer AegisMesh with extreme HTTP-to-Kafka throughput and massive JSON payloads. This continuous soak testing proves our lock-free Distributed Rate Limiter and Java 25 Virtual Thread execution environments remain fully operational without JVM OutOfMemory (OOM) errors, thread starvation, or Zip Bomb expansions.</p>
         </section>
 
-        <section>
-            <h2>Idempotency & Race Condition Prevention</h2>
-            <p>Financial pipelines cannot afford double-spends. AegisMesh is tested heavily against concurrent race conditions. Our Infinispan cluster caching guarantees that duplicate transaction requests from clients are perfectly isolated and locked, ensuring stable, side-effect-free message delivery across the mesh.</p>
-        </section>
     </article>
 </main>
 

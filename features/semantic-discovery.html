@@ -12,6 +12,12 @@
     <meta property="og:description" content="Intelligently route tasks across Multi-Agent Systems using Model Context Protocol capability cards and Milvus-powered Semantic Vector similarity.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://aegismesh.ch/features/semantic-discovery.html">
+    <meta property="og:image" content="https://aegismesh.ch/scripts/omnimesh-logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Semantic LLM Routing & Agentic Frameworks | AegisMesh">
+    <meta name="twitter:description" content="Intelligently route tasks across Multi-Agent Systems using Model Context Protocol capability cards and Milvus-powered Semantic Vector similarity.">
+    <meta name="twitter:image" content="https://aegismesh.ch/scripts/omnimesh-logo.png">
 
     <script type="application/ld+json">
         {
@@ -19,9 +25,19 @@
             "@type": "TechArticle",
             "headline": "Semantic LLM Routing for Multi-Agent Systems",
             "description": "How AegisMesh uses Milvus and LangChain4j for intelligent Agentic Framework task routing.",
+            "image": "https://aegismesh.ch/scripts/omnimesh-logo.png",
+            "author": {
+                "@type": "Organization",
+                "name": "CryptoBites GmbH",
+                "url": "https://aegismesh.ch"
+            },
             "publisher": {
                 "@type": "Organization",
-                "name": "CryptoBites GmbH"
+                "name": "CryptoBites GmbH",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://aegismesh.ch/scripts/omnimesh-logo.png"
+                }
             }
         }
     </script>
@@ -61,7 +77,7 @@
 
         <section>
             <h2>AI Governance & Hallucination Guardrails</h2>
-            <p>Allowing AI agents to communicate freely creates massive security risks. AegisMesh enforces strict AI Governance by bounding MCP resource reads and tool calls against the GitOps RBAC pipeline. If an AI model hallucinates a tool call, or attempts to access a Kafka stream outside its namespace, the mesh severs the connection immediately.</p>
+            <p>Allowing AI agents to communicate freely creates massive security risks. AegisMesh enforces strict AI Governance by bounding MCP resource reads and tool calls against the GitOps RBAC pipeline. If an AI model hallucinates a tool call, or attempts to access a Kafka stream outside its namespace, the mesh severs the connection immediately. We also actively detect and suspend agents caught in infinite execution loops.</p>
         </section>
     </article>
 </main>
