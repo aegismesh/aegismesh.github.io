@@ -60,27 +60,42 @@
     <article>
         <header>
             <h1>Omni Governance Control Plane</h1>
-            <p class="lead">Replace disjointed standalone monitoring tools. The AegisMesh Omni Governance Control Plane brings native Kafka management, Schema Registry control, and DLQ tracking under a single, unified GitOps-driven dashboard.</p>
+            <p class="lead">Replace disjointed standalone monitoring tools. The AegisMesh Omni Governance Control Plane brings native Kafka management, PII data exploration, drift tracking, and cost optimization under a single dashboard.</p>
         </header>
 
         <section>
-            <h2>Kafka Data Explorer & PII Guardrails</h2>
-            <p>Allowing developers raw access to production message brokers is a massive compliance risk. The Omni Control Plane provides a secure Data Explorer. Kafka messages are dynamically deserialized and sensitive PII (like IBANs or credit cards) is masked on-the-fly based strictly on the requester's exact OIDC role before being rendered to the UI.</p>
+            <h2>Continuous Drift Detection</h2>
+            <p>AegisMesh continuously synchronizes your live physical infrastructure against your declarative GitOps state. It instantly flags severe security and operational drifts, including:</p>
+            <ul>
+                <li><strong>Shadow ACLs:</strong> Detects undocumented Kafka users bypassing the mesh proxy Spiffe IDs.</li>
+                <li><strong>Configuration Mismatches:</strong> Flags physical topic retention policies that deviate from your Kubernetes CRDs.</li>
+                <li><strong>Missing Schemas:</strong> Identifies physical topics actively missing an Avro/Protobuf value schema.</li>
+                <li><strong>Failed Connect Tasks:</strong> Alerts when Kafka Connect tasks crash despite the connector status reporting as running.</li>
+                <li><strong>Orphaned DLQs:</strong> Flags dead-letter topics where the parent connector has been deleted.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Data Explorer & PII Guardrails</h2>
+            <p>Allowing developers raw access to production message brokers is a massive compliance risk. The Omni Control Plane provides a secure, role-based Data Explorer.</p>
+            <p>Kafka messages are dynamically deserialized. If a user lacks the <code>ROLE_SECURITY_ADMIN</code> or <code>ROLE_PII_VIEWER</code> scope, the engine automatically intercepts and redacts sensitive JSON nodes including <strong>SSNs, Credit Cards, Passwords, and Emails</strong> (replaced with <code>****-REDACTED</code>) before rendering the payload.</p>
         </section>
 
         <section>
             <h2>Consumer Rewind Time-Travel</h2>
-            <p>Incident recovery often requires resetting Kafka offsets, which traditionally demands privileged CLI broker access. AegisMesh offers self-service "Time-Travel". Developers can instantly rewind their specific Consumer Group offsets to an exact target timestamp safely through the mesh without compromising cluster security.</p>
+            <p>Incident recovery often requires resetting Kafka offsets, which traditionally demands privileged CLI broker access. AegisMesh offers self-service "Time-Travel".</p>
+            <p>Operators can specify a target timestamp and instantly rewind specific Consumer Group offsets securely through the mesh. The platform natively verifies that consumer groups are in an <code>EMPTY</code> or <code>DEAD</code> state before allowing mutations, preventing offset conflicts with active applications.</p>
         </section>
 
         <section>
-            <h2>Continuous Drift Detection</h2>
-            <p>AegisMesh continuously monitors your infrastructure against the declarative GitOps state. It instantly flags configuration mismatches, orphaned Dead Letter Queues (DLQs), missing schemas, failed Kafka Connect tasks, and Shadow ACLs that bypass the mesh proxy.</p>
-        </section>
-
-        <section>
-            <h2>DLQ Orchestration & Safe Replay</h2>
-            <p>Bad data can easily block your entire event stream. AegisMesh automatically routes poison pills and HTTP failures to a persistent Dead Letter Queue (DLQ). Operators can use the governance API to inspect the failed payloads, correct schema violations natively, and execute a synchronized replay directly back into the live data-plane without manual scripting.</p>
+            <h2>Automated Topic Recommendations</h2>
+            <p>Stop paying for wasted cloud storage. AegisMesh analyzes your cluster topography to provide actionable cost-saving recommendations. It actively flags:</p>
+            <ul>
+                <li>Unused or orphaned physical topics.</li>
+                <li>Developer leftovers (test topics ending in UUIDs).</li>
+                <li>Over-partitioned Kafka Streams or Dead Letter Topics (DLTs).</li>
+                <li>Changelog topics missing required compaction policies.</li>
+            </ul>
         </section>
     </article>
 </main>

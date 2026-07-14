@@ -59,7 +59,7 @@
 
     <article>
         <header>
-            <h1>Extreme Performance Architecture</h1>
+            <h1>Technology & Architecture Overview</h1>
             <p class="lead">AegisMesh is built on strict Domain-Driven Design (DDD) principles. We explicitly drop standard external databases in favor of an embedded memory grid to deliver raw performance and zero-latency state resolution.</p>
         </header>
 
@@ -69,18 +69,19 @@
         </section>
 
         <section>
+            <h2>The Compression Conflict Resolved</h2>
+            <p>Blocking large compressed files at the edge is a necessary security practice to prevent zip-bomb attacks. However, Kafka relies heavily on compression to maintain high throughput. AegisMesh solves this conflict effortlessly.</p>
+            <p>First, the gateway forces external clients to send uncompressed payloads. This allows the security engine to validate the raw JSON and block memory exhaustion attacks. Once the data is verified, the gateway applies native Kafka <code>Zstandard</code> compression internally before writing to the broker. Your edge remains secure while your internal messaging stays perfectly optimized.</p>
+        </section>
+
+        <section>
             <h2>Enterprise-First Declarative Provisioning</h2>
-            <p>Deploying raw Strimzi KafkaTopic CRDs, KafkaUser ACLs, and Confluent Schema files using complex Helm charts creates sprawling, fragmented GitOps repositories. AegisMesh acts as an intelligent infrastructure operator. Developers define simplified <code>OmniRoute</code> and <code>UnifiedRbacPipeline</code> definitions. The AegisMesh Provisioning Domain automatically translates these standard definitions and pushes the underlying CRDs and Schemas directly into the Kubernetes API, drastically reducing enterprise cognitive load.</p>
+            <p>Deploying raw Strimzi KafkaTopic CRDs, KafkaUser ACLs, and Confluent Schema files using complex Helm charts creates sprawling, fragmented GitOps repositories. AegisMesh acts as an intelligent infrastructure operator. Developers define simplified <code>OmniRoute</code> configurations, and the AegisMesh Provisioning Domain automatically translates and pushes the underlying CRDs directly into the Kubernetes API.</p>
         </section>
 
         <section>
             <h2>Fail-Open Control Plane Resilience</h2>
-            <p>The Omni Governance Control Plane actively calculates drift and synchronizes configuration states down to the gateway using hashed checksums. If the centralized governance infrastructure suffers a catastrophic outage, the AegisMesh Data Plane fails-open. It continues routing massive volumes of traffic flawlessly using its last known good cached state to ensure absolute zero downtime.</p>
-        </section>
-
-        <section>
-            <h2>Unmatched Performance</h2>
-            <p>Driven by Java 25 Virtual Threads, AegisMesh manages tens of thousands of simultaneous requests without slowing down your systems. Heavy processing tasks are isolated automatically to ensure your gateway routing remains lightning fast.</p>
+            <p>The Omni Governance Control Plane actively calculates drift and synchronizes configuration states down to the gateway using hashed checksums. Driven by <strong>Java 25 Virtual Threads</strong>, if the centralized governance infrastructure suffers a catastrophic outage, the AegisMesh Data Plane fails-open. It continues routing massive volumes of traffic flawlessly using its last known good cached state to ensure absolute zero downtime.</p>
         </section>
     </article>
 </main>

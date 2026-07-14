@@ -76,44 +76,48 @@
     </header>
 
     <section id="features" class="grid" aria-label="Core Architecture Features">
+        <!-- AI Features -->
         <article class="card">
             <h2><a href="features/semantic-discovery.html" title="Semantic Agent Routing for Multi-Agent Systems">Semantic LLM Routing</a></h2>
-            <p>Decouple your AI agents. AegisMesh uses Milvus Vector DB and LangChain4j to dynamically map complex tasks to the correct agent using MCP capability cards and cosine similarity.</p>
+            <p>Decouple your AI agents. AegisMesh uses Milvus Vector DB and LangChain4j to dynamically map complex tasks to the correct agent using MCP capability cards.</p>
         </article>
 
         <article class="card">
             <h2><a href="features/ai-edge.html" title="AI Governance and LLM Cost Control">AI Governance & Proxy</a></h2>
-            <p>Protect your Multi-Agent frameworks. Track FinOps AI token metrics, map LLM shadow IT, block prompt injections, and enforce Human-in-the-Loop (HITL) execution natively.</p>
+            <p>Protect your Multi-Agent frameworks. Track FinOps AI token metrics, map LLM shadow IT, block prompt injections, and enforce strict Human-in-the-Loop (HITL) execution.</p>
         </article>
 
+        <!-- Edge Security -->
         <article class="card">
             <h2><a href="features/security.html" title="Banking-Grade API Security">Banking-Grade Security</a></h2>
-            <p>GitOps-driven RBAC, AST-based GraphQL limits, Data Loss Prevention (DLP), Prompt Injection prevention, BOLA protection for data streams, and Log4Shell payload interception.</p>
+            <p>Enforce Zero-Trust security via BOLA prevention, AST-based GraphQL complexity limiting, Data Loss Prevention (DLP), and Log4Shell payload interception.</p>
+        </article>
+
+        <!-- Kafka & Streaming (Separated Features) -->
+        <article class="card">
+            <h2><a href="features/kafka-translation.html" title="Kafka Translation Layer & Schema Validation">Kafka Translation Layer</a></h2>
+            <p>Automatically bridge HTTP APIs to Kafka. Features real-time Schema Awareness (JSON to Avro/Protobuf) and automated Dead Letter Queue (DLQ) routing for poison pills.</p>
         </article>
 
         <article class="card">
             <h2><a href="features/omni-governance.html" title="Omni Governance Control Plane">Omni Governance Plane</a></h2>
-            <p>Replace standalone tools with a unified DDD-driven control plane. Manage Kafka drift, execute consumer rewinds, safely explore PII-masked data, and prevent destructive schema mutations.</p>
+            <p>Detect configuration drift, identify Shadow ACLs, explore PII-masked messages safely, and execute Consumer Group time-travel rewinds via a unified API.</p>
         </article>
 
         <article class="card">
-            <h2><a href="features/omni-routing.html" title="Omni-Protocol Event Routing">Omni-Protocol Routing</a></h2>
-            <p>Bridge HTTP traffic natively to Kafka topics, RabbitMQ queues, and S3 buckets without writing backend middleware or fragile connector scripts.</p>
+            <h2><a href="features/kafka-governance.html" title="Kafka Topology Governance">Kafka Topology Governance</a></h2>
+            <p>Enforce K8s Admission guardrails. Block copartitioning mismatches, enforce high-availability retention policies, and isolate zombie consumer groups.</p>
         </article>
 
-        <article class="card">
-            <h2><a href="features/architecture.html" title="Extreme Performance Architecture">Stateless Architecture</a></h2>
-            <p>Eliminate infrastructure bloat. Massive scalability with an embedded Infinispan grid and a Self-Provisioning GitOps Operator that manages K8s CRDs automatically.</p>
-        </article>
-
+        <!-- Technology & Architecture -->
         <article class="card">
             <h2><a href="features/wasm.html" title="Pure-Java WebAssembly Extensibility">WASM Extensibility</a></h2>
-            <p>Safely run custom logic at the edge. AegisMesh uses Chicory to execute WebAssembly binaries natively inside the JVM without JNI overhead, enabling ultra-low latency transformations.</p>
+            <p>Safely run custom logic at the edge. Execute WebAssembly binaries natively inside the JVM using Chicory, eliminating fragile JNI overhead and memory leaks.</p>
         </article>
 
         <article class="card">
-            <h2><a href="features/testing.html" title="Resilience & Chaos Engineering">Rigorous Resilience</a></h2>
-            <p>Built using an aggressive Test-Driven Development (TDD) methodology. Continuous K6 soak testing and chaotic fault-tolerance simulation ensure ultimate gateway stability.</p>
+            <h2><a href="features/architecture.html" title="Technology & Architecture Overview">Technology Overview</a></h2>
+            <p>Built for extreme performance on Java 25 Virtual Threads. AegisMesh eliminates external databases using an embedded Infinispan memory grid and GitOps provisioning.</p>
         </article>
     </section>
 </main>

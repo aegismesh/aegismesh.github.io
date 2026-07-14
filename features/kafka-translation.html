@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafka Translation Layer & DLQ | AegisMesh</title>
+    <meta name="description" content="Bridge HTTP APIs natively to Kafka. AegisMesh offers on-the-fly Schema Awareness, JSON-to-Avro conversion, and Dead Letter Queue (DLQ) orchestration.">
+    <link rel="canonical" href="https://aegismesh.ch/features/kafka-translation.html">
+
+    <!-- JSON-LD FAQ Schema explicitly for Google AI Overviews -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+                "@type": "Question",
+                "name": "What is a Kafka Translation Layer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A Kafka Translation Layer is an edge proxy that automatically bridges synchronous HTTP REST traffic into asynchronous Kafka event streams without requiring custom backend middleware."
+                }
+            }, {
+                "@type": "Question",
+                "name": "How does AegisMesh handle Kafka Schema Validation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AegisMesh validates incoming JSON payloads against the Apicurio Schema Registry in real-time, converting them into optimized Avro or Protobuf formats before they reach the broker."
+                }
+            }, {
+                "@type": "Question",
+                "name": "What happens to invalid Kafka messages?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Malformed payloads (poison pills) are intercepted at the edge and automatically routed to an automated Dead Letter Queue (DLQ) to prevent downstream consumer crashes."
+                }
+            }]
+        }
+    </script>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/x-icon" href="../scripts/favicon.ico">
+</head>
+<body>
+
+<nav aria-label="Main Navigation">
+    <a href="/" class="nav-logo">AegisMesh</a>
+    <div class="nav-links">
+        <a href="mailto:info@aegismesh.ch">Contact Engineering</a>
+    </div>
+</nav>
+
+<main class="article-container">
+    <nav aria-label="Breadcrumb">
+        <a href="/" class="breadcrumb">Back to Overview</a>
+    </nav>
+
+    <article>
+        <header>
+            <h1>Kafka Translation Layer & DLQ</h1>
+            <p class="lead">Stop writing custom backend microservices just to bridge HTTP APIs to event streams. AegisMesh natively translates protocols, enforces schema compatibility, and manages failed messages directly at the edge.</p>
+        </header>
+
+        <section>
+            <h2>1. HTTP to Kafka Bridging</h2>
+            <p>Connecting legacy web clients to modern event streams is a challenge because older applications expect instant HTTP responses. AegisMesh acts as a smart synchronous-to-asynchronous bridge:</p>
+            <ul>
+                <li><strong>Synchronous Facade:</strong> Accepts standard REST or GraphQL requests and forwards them to Kafka or RabbitMQ topics.</li>
+                <li><strong>State Acknowledgment:</strong> Efficiently waits for the Kafka stream to process the event before returning an HTTP 200 response to the client.</li>
+                <li><strong>Zero Data Loss:</strong> If backend brokers go offline, the gateway temporarily spools in-flight messages to secure local storage and replays them upon recovery.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. On-the-Fly Schema Awareness</h2>
+            <p>Unvalidated data can crash downstream microservices. AegisMesh features native integration with Apicurio Schema Registry to guarantee payload integrity.</p>
+            <ul>
+                <li><strong>Format Translation:</strong> Automatically converts incoming JSON payloads into highly compressed <strong>Avro</strong> or <strong>Protobuf</strong> binary formats.</li>
+                <li><strong>Strict Validation:</strong> Rejects payloads that violate the registered topic schema before they consume broker network bandwidth, preventing data corruption.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Dead Letter Queue (DLQ) Orchestration</h2>
+            <p>Bad data easily blocks data pipelines. AegisMesh automates the handling of "poison pills" so your streams keep flowing.</p>
+            <ul>
+                <li><strong>Automated Routing:</strong> Schematically invalid messages or failed HTTP webhooks are instantly diverted to a persistent Dead Letter Queue (DLQ).</li>
+                <li><strong>API Inspection:</strong> Teams can query failed payloads using the Omni Governance API to identify the exact cause of failure (with dynamic PII masking).</li>
+                <li><strong>Synchronized Replay:</strong> Safely replay corrected payloads back into the live data-plane without writing manual recovery scripts.</li>
+            </ul>
+        </section>
+    </article>
+</main>
+
+<footer>
+    <p>Copyright 2026 CryptoBites GmbH, Zug, Switzerland. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

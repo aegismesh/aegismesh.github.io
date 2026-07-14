@@ -60,23 +60,28 @@
     <article>
         <header>
             <h1>Kafka Topology Governance</h1>
-            <p class="lead">Replace standalone monitoring tools. AegisMesh natively tracks topic health and isolates poison pills via Dead Letter Topics. It manages cluster routing directly at the edge to keep your streams flowing safely.</p>
+            <p class="lead">AegisMesh acts as a strict infrastructure operator. It enforces GitOps compliance, validates topology joins, and prevents developers from deploying fragile or destructive Kafka configurations.</p>
         </header>
 
         <section>
-            <h2>Isolating Poison Pills</h2>
-            <p>Bad data can easily block your entire event stream. AegisMesh detects malformed messages before they crash your downstream consumers. It automatically routes these poison pills to a Dead Letter Topic (DLT). This allows your teams to inspect the errors without stopping the main data pipeline.</p>
+            <h2>Topology & Copartitioning Validation</h2>
+            <p>Mismatched stream topologies lead to silent join failures in production. AegisMesh intercepts deployment requests and performs strict validation on your stream topologies.</p>
+            <p>Before a microservice is deployed, the mesh verifies that all input topics and repartition topics have identical partition counts. If it detects a <strong>Copartitioning Mismatch</strong>, it actively blocks the deployment to prevent data corruption.</p>
         </section>
 
         <section>
-            <h2>Preventing Thread Starvation</h2>
-            <p>High volume traffic spikes can overwhelm standard message brokers. AegisMesh monitors partition lag in real time. It uses backpressure mechanisms to slow down incoming HTTP requests if Kafka struggles to keep up. This prevents thread starvation and keeps your cluster stable under heavy load.</p>
+            <h2>High Availability Guardrails & Admission Control</h2>
+            <p>Developers often deploy topics with default, unsafe settings. The AegisMesh Admission Webhook enforces enterprise reliability rules automatically via a mutating webhook:</p>
+            <ul>
+                <li><strong>Replica Enforcement:</strong> Automatically injects JSON Patches to ensure <code>min.insync.replicas</code> is high enough for cluster availability.</li>
+                <li><strong>Disk Leak Prevention:</strong> Validates that internal Streams repartition topics strictly utilize <code>cleanup.policy=delete</code> with aggressive retention limits to prevent broker storage exhaustion.</li>
+                <li><strong>Delete Protection:</strong> Blocks malicious or accidental deletion of critical production topics without explicit overriding annotations (e.g., <code>kafka.health.io/allow-delete: true</code>).</li>
+            </ul>
         </section>
 
         <section>
-            <h2>The Compression Conflict</h2>
-            <p>Blocking large compressed files at the edge is a necessary security practice. However Kafka relies heavily on compression like Zstandard to maintain high throughput. AegisMesh solves this conflict effortlessly.</p>
-            <p>First the gateway forces external clients to send uncompressed payloads, if not whitelisted. This allows the security engine to validate the raw JSON and block memory exhaustion attacks. Once the data is verified the gateway applies native Kafka compression internally before writing to the broker. Your edge remains secure while your internal messaging stays perfectly optimized.</p>
+            <h2>Zombie Consumer Detection</h2>
+            <p>High volume traffic and orphaned microservices can leave behind empty consumer groups. AegisMesh monitors partition lag in real time. It automatically identifies <strong>Zombie Consumer Groups</strong>—groups with massive accumulated lag but zero active members—allowing operators to clean up resources before thread starvation occurs.</p>
         </section>
     </article>
 </main>
